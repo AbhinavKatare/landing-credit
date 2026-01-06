@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for landing page */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    @apply bg-white text-slate-900;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-slate-900;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  p {
+    @apply text-slate-600;
+    line-height: 1.7;
+  }
+  
+  a {
+    @apply transition-colors text-inherit;
+    text-decoration: none;
+  }
+  
+  button {
+    @apply transition-all cursor-pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+  }
+  
+  img, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+}
+
+/* Landing page animations */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+  background-size: 200% auto;
+}
+
+/* Landing page specific styles */
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1280px;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+}
+
+/* Additional professional styling */
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure proper spacing and typography */
+section {
+  @apply w-full;
+}
+
+/* Button hover effects */
+button, a[role="button"] {
+  @apply cursor-pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover, a[role="button"]:hover {
+  transform: translateY(-1px);
+}
+
+button:active, a[role="button"]:active {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.group:hover {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Image and media optimization */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-[#74bc1f];
+}
+
+/* Selection color */
+::selection {
+  @apply bg-[#74bc1f] text-white;
+}
+
+::-moz-selection {
+  @apply bg-[#74bc1f] text-white;
+}
